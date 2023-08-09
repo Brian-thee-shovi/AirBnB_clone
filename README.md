@@ -1,8 +1,4 @@
-Airbnb collaborative project
-  <title>Welcome AirBnB clone project</title>
-</head>
-<body>
-
+<h1>Airbnb collaborative project</h1>
 <h2>First Step: Writing a command interpreter to manage all my AirBnB objects</h2>
 <p>This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration.</p>
 
@@ -13,7 +9,3 @@ Airbnb collaborative project
   <li><code>Storage Engine</code>: Create the first abstracted storage engine of the project: File storage.</li>
   <li><code>Unit Tests</code>: Create all unittests to validate all our classes and storage engine.</li>
 </ul>
-
-</body>
-</html>
-
