@@ -1,11 +1,25 @@
-<h2>Airbnb collaborative project</h2>
-<p>First Step: Writing a command interpreter to manage all my AirBnB objects</p>
-<p>This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration.</p>
-
 <ul>
-  <li><code>BaseModel</code>: Put in place a parent class to take care of the initialization, serialization and deserialization of your future instances.</li>
-  <li><code>Serialization/Deserialization Flow</code>: Create a simple flow of serialization/deserialization: Instance &lt;-&gt; Dictionary &lt;-&gt; JSON string &lt;-&gt; file.</li>
-  <li><code>AirBnB Classes</code>: Create all classes used for AirBnB (User, State, City, Place…) that inherit from BaseModel.</li>
-  <li><code>Storage Engine</code>: Create the first abstracted storage engine of the project: File storage.</li>
-  <li><code>Unit Tests</code>: Create all unittests to validate all our classes and storage engine.</li>
+  <li><code>Command Interpreter:</code>
+    <p>Develop a command-line interface (CLI) that allows users to interact with your Airbnb objects using various commands. For example, users can create objects, update attributes, delete objects, and more. The CLI should provide a user-friendly way to manage the application.</p>
+  </li>
+  
+  <li><code>BaseModel:</code>
+    <p>Create a <code>BaseModel</code> class that serves as a parent class for all your future Airbnb objects. This class should handle object initialization, serialization, and deserialization.</p>
+  </li>
+  
+  <li><code>Serialization/Deserialization Flow:</code>
+    <p>Set up a process to convert instances of your Airbnb objects to dictionaries, then to JSON strings, and vice versa. This flow is important for storing and retrieving data in different formats.</p>
+  </li>
+  
+  <li><code>Airbnb Classes:</code>
+    <p>Create classes for different Airbnb entities that inherit from the <code>BaseModel</code> class. These classes could include <code>User</code>, <code>State</code>, <code>City</code>, <code>Place</code>, and any other relevant entities you plan to model in your application.</p>
+  </li>
+  
+  <li><code>Storage Engine:</code>
+    <p>Implement an abstracted storage engine for file storage. This could involve creating methods to save and load objects to and from files. The storage engine should support different object types and provide a consistent way to interact with the underlying storage mechanism.</p>
+  </li>
+  
+  <li><code>Unit Tests:</code>
+    <p>Write comprehensive unit tests for all the classes you've created, including the <code>BaseModel</code> class, the various Airbnb entity classes, and the storage engine. These tests will help ensure that your code works correctly and identify any potential issues early in the development process.</p>
+  </li>
 </ul>
