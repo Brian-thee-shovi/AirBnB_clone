@@ -78,13 +78,11 @@ class HBNBCommand(cmd.Cmd):
             return
         objects = storage.all()
         obj_id = f"{class_name}.{instance_id}"
-
         if obj_id in objects:
             obj = objects[obj_id]
             print(obj)
         else:
             print("** no instance found **")
-
     def do_destroy(self, args):
         """
         Deletes an instance based on the class name and ID
@@ -95,14 +93,13 @@ class HBNBCommand(cmd.Cmd):
         args_list = args.split()
         if len(args_list) < 2:
             print("** class name and instance id missing **")
-        return
+            return
         class_name, instance_id = args_list[0], args_list[1]
         if class_name not in classesList:
             print("** class doesn't exist **")
             return
         objects = storage.all()
         obj_id = f"{class_name}.{instance_id}"
-
         if obj_id in objects:
             del objects[obj_id]
             fstorage.save()
@@ -126,7 +123,6 @@ class HBNBCommand(cmd.Cmd):
             print(objs_list)
         else:
             print("** class doesn't exist **")
-    
     def do_update(self, arg):
         """
         Updates an instance based on the class name, ID, attribute, and value.
@@ -135,7 +131,6 @@ class HBNBCommand(cmd.Cmd):
         """
         objs = storage.all()
         args = arg.split()
-
         if len(args) < 2:
             print("** class name and instance id missing **")
         elif args[0] in classesList:
@@ -155,50 +150,43 @@ class HBNBCommand(cmd.Cmd):
                     attr_value = eval(attr_value.strip('"'))
                 except Exception:
                     pass
-
-            setattr(obj, attr_name, attr_value)
-            storage.save()
-        else:
-            print("** class doesn't exist **")
+                setattr(obj,attr_name,attr_value)
+                storage.save()
+            else:
+                print("** class doesn't exist **")
 
     def default(self, line):
-            """
-            Default method for handling custom commands.
-            Args:
-            line: Input line containing the command.
-            """
-            args = line.split(".")
-            if len(args) >= 2:
-                    className = args[0]
-                    method = args[1]
-                    if className in classesList:
-                            objects = storage.all()
-
-                    if method == "count()":
-                        times = sum(1 for key in objects if className in key)
-                        print(times)
-
-                    elif method == "all()":
-                        allList = [str(objects[key]) for key in objects if className in key]
-                        print(allList)
-
-                    elif "show" in method:
-                        show_id = method.split("(")[1].strip(")").replace('"', '')
-                        show_str = f"{className} {show_id}"
-                        self.do_show(show_str)
-                    elif "destroy" in method:
-                        destroy_id = method.split("(")[1].strip(")").replace('"', '')
-                        destroy_str = f"{className} {destroy_id}"
-                        self.do_destroy(destroy_str)
-                    elif "update" in method:
-                         # Extract update_id, attribute, and value
-                        update_params = method.split("(")[1].strip(")").split(", ")
-                        if "{" not in update_params[0]:
-                            update_id, attr, value = [param.strip('"') for param in update_params]
-                            update_str = f"{className} {update_id} {attr} {value}"
-                            self.do_update(update_str)
-
-
+        """
+        Default method for handling custom commands.
+        Args:
+        line: Input line containing the command.
+        """
+        args = line.split(".")
+        if len(args) >= 2:
+            className = args[0]
+            method = args[1]
+            if className in classesList:
+                objects = storage.all()
+                if method == "count()":
+                    times = sum(1 for key in objects if className in key)
+                    print(times)
+                elif method == "all()":
+                    allList = [str(objects[key]) for key in objects if className in key]
+                    print(allList)
+                elif "show" in method:
+                    show_id = method.split("(")[1].strip(")").replace('"', '')
+                    show_str = f"{className} {show_id}"
+                    self.do_show(show_str)
+                elif "destroy" in method:
+                    destroy_id = method.split("(")[1].strip(")").replace('"', '')
+                    destroy_str = f"{className} {destroy_id}"
+                    self.do_destroy(destroy_str)
+                elif "update" in method:
+                    # Extract update_id, attribute, and value
+                    update_params = method.split("(")[1].strip(")").split(", ")
+                    if "{" not in update_params[0]:
+                        update_id, attr, value = [param.strip('"') for param in update_params]
+                        update_str = f"{className} {update_id} {attr} {value}"
+                        self.do_update(update_str)
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
