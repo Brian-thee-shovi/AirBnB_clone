@@ -164,18 +164,15 @@ class HBNBCommand(cmd.Cmd):
     def default(self, line):
             """
             Default method for handling custom commands.
-    
             Args:
-                line: Input line containing the command.
+            line: Input line containing the command.
             """
-        args = line.split(".")
-
+            args = line.split(".")
             if len(args) >= 2:
-                className = args[0]
-                method = args[1]
-
-                if className in classesList:
-                    objects = storage.all()
+                    className = args[0]
+                    method = args[1]
+                    if className in classesList:
+                            objects = storage.all()
 
                     if method == "count()":
                         times = sum(1 for key in objects if className in key)
