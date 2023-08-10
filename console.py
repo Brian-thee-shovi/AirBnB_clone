@@ -23,6 +23,7 @@ classesList = [
         ]
 """creating our class"""
 class HBNBCommand(cmd.Cmd):
+        """Defines our Airbnb Console"""
     prompt = '(hbnb) '
     def emptyline(self):
         """
