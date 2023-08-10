@@ -23,8 +23,8 @@ classesList = [
         ]
 """creating our class"""
 class HBNBCommand(cmd.Cmd):
-        """Defines our Airbnb Console"""
-    prompt = '(hbnb) '
+    """Defines our Airbnb Console"""
+    prompt = '(hbnb)'
     def emptyline(self):
         """
         Won't execute if an empty line + ENTER is clicked.
@@ -153,8 +153,8 @@ class HBNBCommand(cmd.Cmd):
                     pass
                 setattr(obj,attr_name,attr_value)
                 storage.save()
-            else:
-                print("** class doesn't exist **")
+        else:
+            print("** class doesn't exist **")
 
     def default(self, line):
         """
