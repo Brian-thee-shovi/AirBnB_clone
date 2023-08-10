@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """importing relevant modules"""
-import cmd
 import sys
+import cmd
 import json
+from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -10,7 +11,6 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 from models.place import Place
-from models import storage
 
 classesList = [
         "BaseModel",
@@ -162,86 +162,44 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def default(self, line):
-    """
-        Default method for handling custom commands.
-        Args:
-        line: Input line containing the command.
-        """
-        args = line.split(".")def default(self, line):
-    """
-    Default method for handling custom commands.
+            """
+            Default method for handling custom commands.
     
-    Args:
-        line: Input line containing the command.
-    """
-    args = line.split(".")
-    
-    if len(args) >= 2:
-        className = args[0]
-        method = args[1]
-        
-        if className in classesList:
-            objects = storage.all()
-            
-            if method == "count()":
-                times = sum(1 for key in objects if className in key)
-                print(times)
-            
-            elif method == "all()":
-                allList = [str(objects[key]) for key in objects if className in key]
-                print(allList)
-            
-            elif "show" in method:
-                show_id = method.split("(")[1].strip(")").replace('"', '')
-                show_str = f"{className} {show_id}"
-                self.do_show(show_str)
-            
-            elif "destroy" in method:
-                destroy_id = method.split("(")[1].strip(")").replace('"', '')
-                destroy_str = f"{className} {destroy_id}"
-                self.do_destroy(destroy_str)
-            
-            elif "update" in method:
-                # Extract update_id, attribute, and value
-                update_params = method.split("(")[1].strip(")").split(", ")
-                if "{" not in update_params[0]:
-                    update_id, attr, value = [param.strip('"') for param in update_params]
-                    update_str = f"{className} {update_id} {attr} {value}"
-                    self.do_update(update_str)
+            Args:
+                line: Input line containing the command.
+            """
+        args = line.split(".")
 
+            if len(args) >= 2:
+                className = args[0]
+                method = args[1]
 
-    if len(args) >= 2:
-        className = args[0]
-        method = args[1]
+                if className in classesList:
+                    objects = storage.all()
 
-        if className in classesList:
-            objects = storage.all()
+                    if method == "count()":
+                        times = sum(1 for key in objects if className in key)
+                        print(times)
 
-            if method == "count()":
-                times = sum(1 for key in objects if className in key)
-                print(times)
+                    elif method == "all()":
+                        allList = [str(objects[key]) for key in objects if className in key]
+                        print(allList)
 
-            elif method == "all()":
-                allList = [str(objects[key]) for key in objects if className in key]
-                print(allList)
-
-            elif "show" in method:
-                show_id = method.split("(")[1].strip(")").replace('"', '')
-                show_str = f"{className} {show_id}"
-                self.do_show(show_str)
-
-            elif "destroy" in method:
-                destroy_id = method.split("(")[1].strip(")").replace('"', '')
-                destroy_str = f"{className} {destroy_id}"
-                self.do_destroy(destroy_str)
-
-            elif "update" in method:
-                # Extract update_id, attribute, and value
-                update_params = method.split("(")[1].strip(")").split(", ")
-                if "{" not in update_params[0]:
-                    update_id, attr, value = [param.strip('"') for param in update_params]
-                    update_str = f"{className} {update_id} {attr} {value}"
-                    self.do_update(update_str)
+                    elif "show" in method:
+                        show_id = method.split("(")[1].strip(")").replace('"', '')
+                        show_str = f"{className} {show_id}"
+                        self.do_show(show_str)
+                    elif "destroy" in method:
+                        destroy_id = method.split("(")[1].strip(")").replace('"', '')
+                        destroy_str = f"{className} {destroy_id}"
+                        self.do_destroy(destroy_str)
+                    elif "update" in method:
+                         # Extract update_id, attribute, and value
+                        update_params = method.split("(")[1].strip(")").split(", ")
+                        if "{" not in update_params[0]:
+                            update_id, attr, value = [param.strip('"') for param in update_params]
+                            update_str = f"{className} {update_id} {attr} {value}"
+                            self.do_update(update_str)
 
 
 if __name__ == '__main__':
