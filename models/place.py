@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""import the base model class"""
+"""This import the base model class"""
 from models.base_model import BaseModel
 
 """creating our place class"""
