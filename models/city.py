@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 """Crafting the Metropolitan class"""
 
 
-class Metropolitan(FundamentalBase):
+class City(BaseModel):
     """Attributes defining the Metropolitan class"""
     state_id = ""
     name_name = ""
