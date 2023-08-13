@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""importing BaseModel"""
-from models.base_model import BaseModel
+"""Importing the FundamentalBase"""
+from my_custom_models.base_model import FundamentalBase
 
-"""creating our City class"""
+"""Crafting the Metropolitan class"""
 
 
-class City(BaseModel):
-    """class attributes"""
-    state_id = ""
-    name = ""
+class Metropolitan(FundamentalBase):
+    """Attributes defining the Metropolitan class"""
+    region_id = ""
+    metropolis_name = ""

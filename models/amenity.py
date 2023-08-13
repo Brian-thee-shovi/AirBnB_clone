@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""import BaseModel class"""
+"""Importing Base class"""
 from models.base_model import BaseModel
 
-"""creating the amenity class"""
+"""Defining a custom Amenity class"""
 
 
 class Amenity(BaseModel):
-    """class attributes"""
+    """Custom attributes for the unique Amenity class"""
     name = ""
