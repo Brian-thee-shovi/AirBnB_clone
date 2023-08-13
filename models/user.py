@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""importing the BaseModel class"""
+"""Importing the BaseModel class"""
 from models.base_model import BaseModel
 
-"""creating user class"""
+"""Creating user class"""
 
 
 class User(BaseModel):
     """attributes for the class"""
-    email = ""
     password = ""
+    email = ""
     first_name = ""
     last_name = ""
