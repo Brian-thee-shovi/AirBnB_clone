@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""import our base class"""
+"""Import the base model class"""
 from models.base_model import BaseModel
 
-"""creating our class"""
-
-
+"""Creating our State class"""
 class State(BaseModel):
-    """class atributes"""
+    """Class attributes"""
     name = ""

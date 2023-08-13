@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""This import the base model class"""
+<<<<<<< HEAD
+"""import the base model class"""
+=======
+"""Import the base model class"""
+>>>>>>> b458881c3c2aaff89f059879c2deaa1981e49939
 from models.base_model import BaseModel
 
-"""creating our place class"""
-
-
+"""Creating our Place class"""
 class Place(BaseModel):
-    """class attributes"""
-    city_id = ""
-    user_id = ""
+    """Class attributes"""
     name = ""
     description = ""
     number_rooms = 0
@@ -17,4 +17,7 @@ class Place(BaseModel):
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    amenity_ids = []
+    city_id = ""
+    user_id = ""
+    amenity_ids = []  # Unique list of amenity IDs
+

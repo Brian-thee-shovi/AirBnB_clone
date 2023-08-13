@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""This importing BaseModel"""
+<<<<<<< HEAD
+"""importing BaseModel"""
+=======
+"""Importing the FundamentalBase"""
+>>>>>>> b458881c3c2aaff89f059879c2deaa1981e49939
 from models.base_model import BaseModel
 
-"""creating our City class"""
+"""Crafting the Metropolitan class"""
 
 
 class City(BaseModel):
-    """class attributes"""
+    """Attributes defining the Metropolitan class"""
     state_id = ""
-    name = ""
+    name_name = ""
