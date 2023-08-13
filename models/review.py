@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""import base model class"""
+"""Import the base model class"""
 from models.base_model import BaseModel
 
-"""class creation"""
-
-
+"""Creating our Reviewclass"""
 class Review(BaseModel):
-    """class attributes"""
+    """Class attributes"""
     place_id = ""
     user_id = ""
     text = ""
