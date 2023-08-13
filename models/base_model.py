@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """import modules"""
-=======
-"""Importing modules"""
->>>>>>> b458881c3c2aaff89f059879c2deaa1981e49939
 from datetime import datetime
 import uuid
 import models
