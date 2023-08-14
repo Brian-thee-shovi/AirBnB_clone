@@ -6,6 +6,8 @@ import models
 import json
 
 """Creating the BaseModel class"""
+
+
 class BaseModel:
     def __init__(self, *args, **kwargs):
         """Constructor method

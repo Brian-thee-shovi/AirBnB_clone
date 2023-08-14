@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """import the base model class"""
 from models.base_model import BaseModel
-
-
 """Creating our Place class"""
+
+
 class Place(BaseModel):
+
     """Class attributes"""
     name = ""
     description = ""
@@ -17,4 +18,3 @@ class Place(BaseModel):
     city_id = ""
     user_id = ""
     amenity_ids = []  # Unique list of amenity IDs
-
