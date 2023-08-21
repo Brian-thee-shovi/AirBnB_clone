@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Importing the BaseModel class"""
+"""importing the BaseModel class"""
 from models.base_model import BaseModel
 
 """Creating user class"""

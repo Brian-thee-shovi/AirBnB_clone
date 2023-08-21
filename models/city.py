@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Importing the FundamentalBase"""
+"""importing BaseModel"""
 from models.base_model import BaseModel
 
 """Crafting the Metropolitan class"""

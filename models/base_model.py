@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""Importing modules"""
+"""import modules"""
 from datetime import datetime
 import uuid
 import models
 import json
 
 """Creating the BaseModel class"""
+
+
 class BaseModel:
     def __init__(self, *args, **kwargs):
         """Constructor method
